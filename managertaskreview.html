@@ -25,11 +25,11 @@
 </div>
 
 
-<div id="myModal" class="modal">
+<div id="myModal" class="modal"  style="overflow:scroll">
 
     <!-- Modal content -->
     <div class="modal-content">
-        <div class="modal-header" id="modalheader">
+        <div class="modal-header" id="modalheader" >
             <span id="closemodel" onclick="closemodel()" class="close">&times;</span>
             <h2 id="header"></h2>
         </div>
@@ -46,13 +46,14 @@
 
 
 <script>
+
       $(document).ready(function() {
         $("#includeheader").load("header.html");
         setTimeout(hit, 300);
     });
 
     function hit() {
-        hide("add-project");
+        hide("login");
         sessionStorage["projectname"] = window.location.href.split("=")[1];
 		var string_tabledisp="<thead> <tr> <th>Resource Name</th>"+
 		"<th>Issues Solved/Tested</th> <th>Issues Reopened</th><th>Experience in Years</th><th>Priority Issues Solved</th>"+

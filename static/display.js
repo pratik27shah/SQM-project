@@ -43,6 +43,7 @@ var modal = document.getElementById('myModal');
 
 // When the user clicks on <span> (x), close the modal
 function closemodel() {
+	var modal = document.getElementById('myModal');
 document.getElementById("loader").style.display="none";
     modal.style.display = "none";
 }
