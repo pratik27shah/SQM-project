@@ -1,4 +1,4 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/jquery.js"></script>
 <script  src="js/defect.js"></script>
 <div id="includeheader"></div>
 
@@ -8,9 +8,9 @@
       <br />
       <div class="form-group">
          <label for="project_name" class="">
-         Project Name
+         Username
          </label>
-         <input class=" required form-control" id="project_name" name="project_name" placeholder="Enter your account name" value="" type="text">     
+         <input class=" required form-control" id="username" name="username" placeholder="Enter your account name" value="" type="text">     
       </div>
       <div class="form-group">
          <label for="password" class="">
@@ -23,12 +23,36 @@
 </div>
 
 
+
 <script>
 
 function CheckLogin()
-
 {
-window.location.href = 'managerhome.html'
+
+	$.ajax({
+    url: "json/login.json",
+	beforeSend: function(xhr){
+    if (xhr.overrideMimeType)
+    {
+      xhr.overrideMimeType("application/json");
+    }},
+    //force to handle it as text
+    dataType: "text",
+    success: function(data) {
+var json=JSON.parse(data);
+   
+		for(var i=0;i<Object.keys(json).length;i++){
+		if(json[i].password==$("#password").val() && json[i].username==$("#username").val()){
+		sessionStorage["name"]=json[i].name;
+		sessionStorage["username"]=json[i].username;
+		sessionStorage["status"]=json[i].status;
+		if(json[i].status=="manager")
+		window.location.href = 'managerhome.html'}
+		}
+	}
+});
+
+
 }
       $(document).ready(function(){
   $("#includeheader").load("header.html"); 

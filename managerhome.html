@@ -1,9 +1,9 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/jquery.js"></script>
 <script  src="js/defect.js"></script>
 <div id="includeheader"></div> 
  <div class="col-md-6 col-md-offset-3">
       <div class="page-header">
-        <h1>Manager Name</h1>
+        <h1 ><div id="managername"></div></h1>
       </div>
 
       <p>As an admin you can create new project accounts or view existing ones.</p>
@@ -12,8 +12,8 @@
       <hr />
 
       <h4>Existing Projects</h4>
-      <table class="table">
-        <thead>
+      <table id="projdetails" class="table">
+     <!---   <thead>
           <tr>
             <th>Project Name</th>
             <th>Developers</th>
@@ -21,16 +21,12 @@
           </tr>
         </thead>
         <tbody>
-
+--->
       
-            <tr>
-              <td><a href="" onclick="projecthomepage()">projectabc</a></td>
-              <td>8</td>
-              <td>3</td>
-            </tr>
+        
         
 
-        </tbody>
+        
       </table>
     </div>
   </div>
@@ -41,10 +37,46 @@
       $(document).ready(function(){
   $("#includeheader").load("header.html"); 
   setTimeout(hit,300);
+
+
    });
      function hit(){
+	 
+	 var innervalue="<thead><tr><th>Project Name</th><th>Developers</th><th>Tester</th> </tr></thead><tbody>"
 		hide("add-project");
-  	   };
+		 document.getElementById("managername").innerHTML=sessionStorage["name"]
+		 
+		 var username=sessionStorage["username"]
+		 $.ajax({
+    url: "json/managerprojects.json",
+	beforeSend: function(xhr){
+    if (xhr.overrideMimeType)
+    {
+      xhr.overrideMimeType("application/json");
+    }},
+    //force to handle it as text
+    dataType: "text",
+    success: function(data) {
+var json=JSON.parse(data);
+   
+	var obj=json[username];
+	//var projectnames=obj.projectname.split(",");
+	
+	for(var i=0;i<obj.projectname.length;i++)
+	{
+	name=obj.projectname[i]
+	innervalue=innervalue+"<tr><td><a href='managertaskreview.html?="+name+"' >"+name+"</a></td><td>"+obj[name].developer+"</td><td>"+obj[name].tester+"</td> </tr>";
+	
+	}
+	innervalue=innervalue+"</tbody>";	
+	document.getElementById("projdetails").innerHTML=innervalue;
+		}
+	});
+}
+		 
+
+		 
+  	   
 
 
 </script>

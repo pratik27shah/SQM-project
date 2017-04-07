@@ -1,0 +1,52 @@
+<script src="js/jquery.js"></script>
+<script  src="js/defect.js"></script>
+<div id="includeheader"></div> 
+ <div class="col-md-6 col-md-offset-3">
+      <div class="page-header">
+        <h1>Employee Name</h1>
+      </div>
+
+<p>Employee Designation</p>
+      <hr />
+
+      <h4>Existing Projects</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Task Status</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+
+      
+            <tr>
+              <td><a href="" onclick="projecthomepage()">projectabc</a></td>
+              <td>8</td>
+            </tr>
+        
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+<script>
+      $(document).ready(function(){
+  $("#includeheader").load("header.html"); 
+  setTimeout(hit,300);
+   });
+     function hit(){
+		hide("add-project");
+  	   };
+
+
+</script>
+
+
+
+
+

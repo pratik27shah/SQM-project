@@ -33,6 +33,16 @@ function hide(status) {
     }
 }
 
+function  ajaxcall(jsonfile)
+{
+	var filename="json/"+jsonfile;
+
+
+	
+	
+}
+
+
 function projecthomepage()
 {
 	try{

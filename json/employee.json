@@ -1,0 +1,41 @@
+{
+"employee":["pqrs","srk","bahubali","kattapa","bhalladev"],
+"pqrs":{"projectname":["searchengine","enrollforms"],"searchengine":{"issuessolved":"24","issuesreopened":"19","experience":"5",
+"priorityissuessolved":"2","priorityissuesreopend":"3","timeonproject":"12 months","status":"C# developer"},"enrollforms":{"issuessolved":"48",
+"issuesreopened":"6","experience":"5","priorityissuessolved":"12","priorityissuesreopend":"1","timeonproject":"7 months","status":"Java developer"}
+,"areaofexpertise":"Java,MySQL,Amazon AWS"
+},
+"srk":{"projectname":["searchengine"],"status":"C# developer","searchengine":{"issuessolved":"54","issuesreopened":"8","experience":"3.5",
+"priorityissuessolved":"12","priorityissuesreopend":"1","timeonproject":"14 months"},"areaofexpertise":".NET,C#,SQL Server"
+},
+"bahubali":{"projectname":["searchengine"],"status":"UI/UX designer","searchengine":{"issuessolved":"14","issuesreopened":"6","experience":"1",
+"priorityissuessolved":"0","priorityissuesreopend":"3","timeonproject":"4 months"},"areaofexpertise":"Javascript,Jquery,Node.js"
+},
+"kattapa":{"projectname":["searchengine"],"status":"tester","searchengine":{"issuessolved":"74","issuesreopened":"32","experience":"1",
+"priorityissuessolved":"12","priorityissuesreopend":"8","timeonproject":"14 months"},"areaofexpertise":"testing"
+},
+"bhalladev":{"projectname":["enrollforms"],"status":"C# developer","enrollforms":{"issuessolved":"14","issuesreopened":"12","experience":"5",
+"priorityissuessolved":"2","priorityissuesreopend":"2","timeonproject":"4 months"},"areaofexpertise":"Java,MySQL,Amazon AWS"
+},
+"searchengine":{"projectstatus":"Delayed by 90 days","reasons":"Client rejected UAT demo,requirements were ambiguous,software architect failed to address cross-domain issues","Expected Delivery Date":"4-March-2017","projectstory":[
+"1-August-2015,Client gave the overview of the project","4-August-2015,Management decided to sign the contract",
+"7-August-2015,Client and the Company management signed the contract formally",
+"16-August-2015-21-Aug-2015,Client and the requirement team had meetings to discuss the requirement and project scope",
+"23-August-2015,The project deadlines was set,and teams were formed",
+"25-Aug-15,4-Sep-15,Requirements were tested and given a signal to move with software arch design and prototype desigining",
+"5-Sep-15,8-Oct-15,Servers were setup and the arch design was approved and send to the client for final permit",
+"9-Oct-15 Client unsatisfied with requirement and raised concern to change design and requirement were analyzed",
+"10-Oct-15,20-Nov-15,requirement were re-gathered and arch was re-done and passed by the client",
+"23-Nov-15,abcd1234 gave his report to the management to start the coding and mentioned for deadline extension as they were 25 days behind schedule",
+"1-Dec-15,14-Jan-2016,Coding and regular testing started",
+"26-Jan-16,Client was given his first demo,the client approved it but was upleased as the project was now 40 days behind schedule",
+"27-Jan-16,4-Sep-16,Coding was completed and was brought into final testing stage",
+"15-Sep-16,1-Oct-16,compatabiliy issues occured and some part was redone",
+"5-Oct-16,17-Oct-17,stress testing and regression testing completed,Client was given final demo of his product",
+"18-Oct-17,client upleased with the UI and now project behind schedule by 65 days",
+"1-Nov-17,18-March-17,UI changed and code deployed on production",
+"23-March-17,at 0900 hours,the production server crashed bringing the website to a complete halt",
+"24-March-17,tilldate,production server issues fixes,coding of certain modules changed,client gives ultimatium to complete project by 1-July-17"
+]}
+
+}
