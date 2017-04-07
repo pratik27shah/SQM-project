@@ -101,7 +101,7 @@ function openpopup()
 {
 
 document.getElementById('myModal').style.display = "block";
-var str="";
+var str="<b> Expected Release Date ";
   $.ajax({
             url: "json/employee.json",
             beforeSend: function(xhr) {
@@ -114,6 +114,7 @@ var str="";
             success: function(data) {
                 var json = JSON.parse(data);
 				var obj=sessionStorage["projectname"]
+				str=str+json[obj].ExpectedDeliveryDate+"</b><br>"
 				for(var i=0;i<json[obj].projectstory.length;i++){
 				if(json[obj].projectstory[i].includes("behind")){
 				str=str+"<br>"+json[obj].projectstory[i].fontcolor("red");
