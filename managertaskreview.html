@@ -2,6 +2,7 @@
 <script src="js/defect.js"></script>
 <script  src="static/display.js"></script>
  <link rel="stylesheet" href="static/popup.css" />
+  <link rel="stylesheet" href="static/style.css" />
 <div id="includeheader"></div>
 <div class="row">
     <div class="col-md-5">
@@ -38,7 +39,7 @@
             <p></p>
             <p></p>
         </div>
-
+<button class="databutton" onclick="Logdetails()">Project Log </button>
 
     </div>
 
@@ -100,7 +101,7 @@
   	   };
 function openpopup()
 {
-
+var status="status"+sessionStorage["projectname"];
 document.getElementById('myModal').style.display = "block";
 var str="<b> Expected Release Date ";
   $.ajax({
@@ -115,7 +116,8 @@ var str="<b> Expected Release Date ";
             success: function(data) {
                 var json = JSON.parse(data);
 				var obj=sessionStorage["projectname"]
-				str=str+json[obj].ExpectedDeliveryDate+"</b><br>"
+				str=str+json[obj].ExpectedDeliveryDate+"</b><br><br>"
+				str=str+"<b> Project Analysis:"+json[obj].reasons+"</b><br><br>"
 				for(var i=0;i<json[obj].projectstory.length;i++){
 				if(json[obj].projectstory[i].includes("behind")){
 				str=str+"<br>"+json[obj].projectstory[i].fontcolor("red");
@@ -124,9 +126,11 @@ var str="<b> Expected Release Date ";
 				str=str+"<br>"+json[obj].projectstory[i];
 			
 				}
-				document.getElementById("putdata").innerHTML=str
+				document.getElementById("putdata").innerHTML=str+localStorage.getItem(status)
+				//alert(localStorage.getItem(status))
 				if(json[obj].projectstatus.includes("Delayed")){document.getElementById("modalheader").style.backgroundColor="red"}
 			document.getElementById("header").innerHTML=json[obj].projectstatus;
+			//alert(sessionStorage[status])
 				}
 				
 				
@@ -140,6 +144,16 @@ function closemodel() {
 	var modal = document.getElementById('myModal');
 
     modal.style.display = "none";
+}
+
+
+
+function Logdetails()
+{
+	document.getElementById("putdata").innerHTML=""
+$("#putdata").load("createlog.html"); 
+  setTimeout(hit,300);
+ 
 }
 </script>
 
