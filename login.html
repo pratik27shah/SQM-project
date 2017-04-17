@@ -43,9 +43,12 @@ var json=JSON.parse(data);
    
 		for(var i=0;i<Object.keys(json).length;i++){
 		if(json[i].password==$("#password").val() && json[i].username==$("#username").val()){
-		sessionStorage["name"]=json[i].name;
-		sessionStorage["username"]=json[i].username;
-		sessionStorage["status"]=json[i].status;
+		localStorage.setItem("name",json[i].name)
+		localStorage.setItem("username",json[i].username)
+		localStorage.setItem("status",json[i].status)
+		//sessionStorage["name"]=json[i].name;
+		//sessionStorage["username"]=json[i].username;
+		//sessionStorage["status"]=json[i].status;
 		if(json[i].status=="manager")
 		window.location.href = 'managerhome.html'}
 		}

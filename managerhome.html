@@ -44,9 +44,9 @@
 	 
 	 var innervalue="<thead><tr><th>Project Name</th><th>Developers</th><th>Tester</th> </tr></thead><tbody>"
 		hide("add-project");
-		 document.getElementById("managername").innerHTML=sessionStorage["name"]
+		 document.getElementById("managername").innerHTML=localStorage.getItem("name")
 		 
-		 var username=sessionStorage["username"]
+		 var username=localStorage.getItem("username")
 		 $.ajax({
     url: "json/managerprojects.json",
 	beforeSend: function(xhr){
